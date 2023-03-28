@@ -1,0 +1,22 @@
+@import "../../styles/variables/fonts";
+@import "../../styles/variables/colors";
+@import "../../styles/mixins/utils";
+
+.header {
+  @include flex_container(row, center, space-around);
+  @include size(60px, 100vw);
+  background: rgb(255, 240, 120);
+  background: linear-gradient(0deg, $secondary_color 14%, $primary_color 100%);
+
+  .list {
+    list-style: none;
+    text-decoration: none;
+    @include flex_container;
+    padding: 0;
+    gap: 15px;
+    font-family: $primary_font;
+  }
+  .logo {
+    @include size(40px, 40px);
+  }
+}

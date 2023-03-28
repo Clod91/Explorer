@@ -1,0 +1,11 @@
+@import "../../styles/variables/fonts";
+@import "../../styles/variables/colors";
+@import "../../styles/mixins/utils";
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  @include size(60px, 100vw);
+  background: rgb(255, 240, 120);
+  background: linear-gradient(0deg, $primary_color 14%, $secondary_color 100%);
+}
