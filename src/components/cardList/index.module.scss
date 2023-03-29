@@ -1,0 +1,14 @@
+@import "../../styles/mixins/utils";
+
+.card_list {
+  @include flex_container;
+  gap: 20px;
+  .first_list {
+    overflow-y: scroll;
+    gap: 20px;
+  }
+  .second_list {
+    overflow-y: scroll;
+    gap: 20px;
+  }
+}

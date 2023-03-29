@@ -3,7 +3,7 @@
 @import "../../styles/mixins/utils";
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   @include size(60px, 100vw);
   background: rgb(255, 240, 120);

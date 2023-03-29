@@ -1,0 +1,29 @@
+@import "../../styles/mixins/utils";
+@import "../../styles/variables/colors";
+@import "../../styles/variables/fonts";
+
+.card {
+  @include size(400px, 250px);
+  @include flex_container(column);
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid $primary_color;
+  & img {
+    @include size(300px, 250px);
+    object-fit: cover;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    transform: translateY(-50px);
+  }
+  .text {
+    @include size(40%, 100%);
+    position: absolute;
+    bottom: 0;
+    color: $background_color;
+    padding: 6px;
+    background-color: $font_color;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.55);
+    transform: translateY(40px);
+    border-radius: 12px;
+  }
+}

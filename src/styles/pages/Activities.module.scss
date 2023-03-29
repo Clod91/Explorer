@@ -1,0 +1,9 @@
+@import "../variables/colors";
+@import "../mixins/utils";
+.activities {
+  @include flex_container(column);
+  gap: 25px;
+  & h2 {
+    color: $font_color;
+  }
+}

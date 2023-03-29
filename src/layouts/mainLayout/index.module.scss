@@ -1,0 +1,8 @@
+@import "../../styles/variables/colors";
+.main_layout {
+  margin: 60px 0px;
+  box-sizing: border-box;
+  & section {
+    background-color: $background_color;
+  }
+}

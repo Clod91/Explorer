@@ -11,6 +11,9 @@ const Header = () => {
         <li>
           <Link to="about">About Us</Link>
         </li>
+        <li>
+          <Link to="activities">Activities</Link>
+        </li>
       </ul>
       <img
         className={style.logo}
