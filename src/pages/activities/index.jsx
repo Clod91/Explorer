@@ -2,24 +2,28 @@ import style from "../../styles/pages/Activities.module.scss";
 import { useState, useEffect } from "react";
 import CardList from "../../components/cardList";
 import { GET } from "../../utils/http";
+import { results } from "../../mocks/activities";
 
 export default function Activities() {
   const [itemList, setItemList] = useState([]);
 
+  // useEffect(() => {
+  //   GET("activities").then((data) => setItemList(data.results)), [];
+  // });
   useEffect(() => {
-    GET("").then((data) => setItemList(data)), [];
+    setItemList(results), [];
   });
-  const filterList = (list, category) =>
-    list.filter((item) => item.category === category);
+  const filterList = (list, type) =>
+    list.filter((item) => item["@type"].includes(type));
   return (
     <div className={style.activities}>
       <div className={style.first_list}>
-        <h2>Elettronica</h2>
-        <CardList data={filterList(itemList, "electronics")} />
+        <h2>Consigliati</h2>
+        <CardList data={filterList(itemList, "Museum")} />
       </div>
       <div className={style.second_list}>
-        <h2>Gioielleria</h2>
-        <CardList data={filterList(itemList, "jewelery")} />
+        <h2>Ristoranti</h2>
+        <CardList data={filterList(itemList, "Restaurant")} />
       </div>
     </div>
   );

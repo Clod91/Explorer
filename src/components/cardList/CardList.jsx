@@ -4,8 +4,8 @@ import Card from "../card";
 const CardList = ({ data }) => {
   return (
     <div className={style.card_list}>
-      {data.map((item) => (
-        <Card data={item} key={item.id} />
+      {data.map((item, i) => (
+        <Card data={item} key={i} />
       ))}
     </div>
   );

@@ -3,17 +3,17 @@
 @import "../../styles/variables/fonts";
 
 .card {
-  @include size(400px, 250px);
+  @include size(200px, 150px);
   @include flex_container(column);
   position: relative;
   border-radius: 12px;
   border: 1px solid $primary_color;
   & img {
-    @include size(300px, 250px);
-    object-fit: cover;
+    @include size(150px, 150px);
+    object-fit: contain;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
-    transform: translateY(-50px);
+    transform: translateY(-25px);
   }
   .text {
     @include size(40%, 100%);

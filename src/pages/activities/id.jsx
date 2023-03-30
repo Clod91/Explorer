@@ -2,28 +2,35 @@ import style from "./id.module.scss";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { GET } from "../../utils/http";
+import { results } from "../../mocks/activities";
 
 export default function Activity() {
   const { id } = useParams();
-  const [activity, setactivity] = useState({});
+  const [activity, setActivity] = useState({});
+  const filterList = (list, type) =>
+    list.filter((item) => item.name.includes(type));
 
   useEffect(() => {
-    GET(`/${id || 1}`).then((data) => setactivity(data));
-  });
+    // GET(`activities?$filter=name%20eq%20%27${id}`).then((data) =>
+    setActivity(filterList(results, id));
+  }, []);
   return (
     <div className={style.activity}>
-      {activity.title ? (
+      {activity.name ? (
         <>
-          <img src={activity.image} alt={activity.title} />
+          <iframe
+            width="600"
+            height="450"
+            src={`https://maps.google.com/maps/?q=+${activity.geo.latitude}+,+${activity.geo.longitude}&output=embed`}
+          ></iframe>
           <div className={style.text}>
-            <h1>{activity.title}</h1>
-            <p>{activity.description}</p>
-            <p>{activity.price}€</p>
-            <p>Categoria: {activity.category}</p>
+            <h1>{activity.name}</h1>
+
+            <p>{activity.telephone}</p>
           </div>
         </>
       ) : (
-        <h3>Il prodotto cercato non è disponibile....</h3>
+        <h3>La destinazione cercata non è disponibile</h3>
       )}
     </div>
   );

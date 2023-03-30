@@ -3,7 +3,10 @@
 .activities {
   @include flex_container(column);
   gap: 25px;
-  & h2 {
+  h2 {
     color: $font_color;
+  }
+  .first_list {
+    @include size(500px, 700px);
   }
 }

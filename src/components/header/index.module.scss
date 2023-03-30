@@ -24,4 +24,10 @@
   .logo {
     @include size(40px, 40px);
   }
+  .input {
+    height: 30px;
+    width: 150px;
+    border-radius: 8px;
+    border: 0;
+  }
 }

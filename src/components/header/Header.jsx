@@ -1,7 +1,15 @@
 import style from "./index.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState("");
+  const onHandleInputChange = (e) => setInputValue(() => e.target.value);
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`activities?$filter=name%20eq%20%27${inputValue}%27`);
+  };
   return (
     <div className={style.header}>
       <ul className={style.list}>
@@ -20,6 +28,16 @@ const Header = () => {
         src="https://img.icons8.com/external-smashingstocks-circular-smashing-stocks/256/external-Explorer-world-tourism-day-smashingstocks-circular-smashing-stocks.png"
         alt="logo"
       />
+      <form onSubmit={onHandleSubmit}>
+        <input
+          className={style.input}
+          type="text"
+          value={inputValue}
+          onChange={onHandleInputChange}
+          placeholder="search"
+          required
+        />
+      </form>
     </div>
   );
 };

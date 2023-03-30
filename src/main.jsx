@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Activities from "./pages/activities";
 import Activity from "./pages/activities/id";
 import MainLayout from "./layouts/mainLayout";
+import Attraction from "./pages/attraction/id";
 import "./index.css";
 
 const router = createBrowserRouter(
@@ -20,7 +21,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="activities" element={<Activities />} />
       <Route path="activities/:id" element={<Activity />} />
-      <Route path="city/:id" element={<h1>Pagina delle città</h1>} />
+      <Route path="attractions/:id" element={<Attraction />} />
     </Route>
   )
 );
