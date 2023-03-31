@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Card = ({ data }) => {
   const navigate = useNavigate();
   const onHandleClick = () => {
-    navigate(`/activities/${data.name}`);
+    navigate(`/activity?name=${data.name}`);
   };
 
   return (

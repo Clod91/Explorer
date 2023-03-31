@@ -6,13 +6,9 @@
   @include flex_container(column);
   @include size(100vh, 100vw);
   font-family: $primary_font;
-  img {
-    width: 50%;
-    height: 300px;
-    object-fit: cover;
-  }
+  color: $font_color;
+
   .text {
-    color: $font_color;
     padding: 20px;
   }
 }
